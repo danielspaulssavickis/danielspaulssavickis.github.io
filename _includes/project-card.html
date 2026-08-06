@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header" onclick="toggleCard(this)">
+    <div>
+      <p class="card-title">{{ project.title }}</p>
+      <div class="tags">
+        {% for tag in project.tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    <i class="chev">&#9662;</i>
+  </div>
+  <div class="card-panel">
+    <div class="card-panel-inner">
+      <p>{{ project.summary }}</p>
+      {% if project.learned %}
+        <p class="label">Learned</p>
+        <p>{{ project.learned }}</p>
+      {% endif %}
+      {% if project.repo %}
+        <a href="{{ project.repo }}">View repo &#8599;</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
